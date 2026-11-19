@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2efff;
+    margin: 0;
+    padding: 25px;
+    color: #29243b;
+}
+
+.container {
+    max-width: 650px;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    color: #6546c5;
+    font-size: 30px;
+}
+
+header p {
+    color: #777;
+}
+
+.calculator, .results {
+    background: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #ddd5f5;
+}
+
+h2 {
+    color: #6546c5;
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #a28ae8;
+    border-color: #6546c5;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+button {
+    flex: 1;
+    padding: 13px;
+    background: #6546c5;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #5035a5;
+}
+
+.reset {
+    background: #777;
+}
+
+.results[hidden] {
+    display: none;
+}
+
+.result-card {
+    background: #f5f2ff;
+    padding: 18px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.result-card p {
+    color: #666;
+    margin: 0;
+}
+
+.result-card h2 {
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.progress {
+    width: 100%;
+    height: 12px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background: #6546c5;
+    transition: width 0.4s;
+}
+
+.status {
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    background: #eee;
+    font-weight: bold;
+}
+
+.status.safe {
+    background: #e0f6e8;
+    color: #18733b;
+}
+
+.status.warning {
+    background: #fff0d6;
+    color: #946000;
+}
+
+.status.danger {
+    background: #ffe2e2;
+    color: #b32626;
+}
+
+footer {
+    text-align: center;
+    color: #888;
+    font-size: 13px;
+    padding: 15px;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+}

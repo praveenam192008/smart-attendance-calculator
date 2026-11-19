@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Attendance Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Smart Attendance Calculator</h1>
+            <p>Manage your attendance. Plan smarter.</p>
+        </header>
+
+        <section class="calculator">
+
+            <h2>Calculate Your Attendance</h2>
+
+            <label for="mode">Choose Calculation Mode</label>
+            <select id="mode">
+                <option value="days">Working Days</option>
+                <option value="classes">Individual Classes</option>
+            </select>
+
+            <label for="total">Total <span id="unit1">Working Days</span></label>
+            <input type="number" id="total" placeholder="Enter total days">
+
+            <label for="attended"><span id="unit2">Days</span> Attended</label>
+            <input type="number" id="attended" placeholder="Enter attended days">
+
+            <label for="minimum">Minimum Attendance Required (%)</label>
+            <input type="number" id="minimum" value="75" min="1" max="100" step="any">
+
+            <label for="missed">How many upcoming <span id="unit3">days</span> might you miss?</label>
+            <input type="number" id="missed" value="0" min="0" step="1">
+
+            <div class="buttons">
+                <button onclick="calculate()">Calculate Attendance</button>
+                <button class="reset" onclick="resetCalculator()">Reset</button>
+            </div>
+
+        </section>
+
+        <section id="results" class="results" hidden>
+
+            <h2>Your Attendance Report</h2>
+
+            <div class="result-card">
+                <p>Current Attendance</p>
+                <h2 id="percentage">0%</h2>
+                <div class="progress">
+                    <div id="progressBar"></div>
+                </div>
+            </div>
+
+            <div class="result-grid">
+
+                <div class="result-card">
+                    <p>Maximum Absences Allowed</p>
+                    <h2 id="bunks">0</h2>
+                </div>
+
+                <div class="result-card">
+                    <p>Classes to Attend to Recover</p>
+                    <h2 id="recovery">0</h2>
+                </div>
+
+            </div>
+
+            <div class="result-card">
+                <p>Attendance After Planned Absences</p>
+                <h2 id="prediction">0%</h2>
+            </div>
+
+            <div id="status" class="status"></div>
+
+        </section>
+
+        <footer>
+            <p>Smart Attendance Calculator | Student Mini Project</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
